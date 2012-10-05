@@ -22,8 +22,8 @@ class PickMarks.Views.BookmarksRetrieve extends Backbone.View
 
 
     $(@el).html(@template(bookmarks: result, query: queries))
-    # @appendBookmark(bookmark) for bookmark in result
-    total.each(@appendBookmark)
+    @appendBookmark(bookmark) for bookmark in result
+    # total.each(@appendBookmark)
     this
 
   appendBookmark: (bookmark) ->
