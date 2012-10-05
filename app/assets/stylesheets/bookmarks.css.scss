@@ -1,0 +1,17 @@
+// Place all the styles related to the bookmarks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+body {
+  width: 80%;
+  margin: 50px auto 100px auto;
+  border: 1px solid #777;
+  font-size: 16px;
+}
+
+ul#retrieve_list{
+  list-style: none;
+  font-size: 1em;
+}

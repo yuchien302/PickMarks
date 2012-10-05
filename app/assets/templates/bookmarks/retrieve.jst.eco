@@ -1,0 +1,9 @@
+<% if @query != "" : %>
+<p><%= @query %></p>
+<% else: %>
+<p>no query~</p>
+<% end %>
+
+
+<ul id="retrieve_list"></ul>
+
