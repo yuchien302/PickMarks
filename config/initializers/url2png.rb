@@ -23,3 +23,4 @@ def url2png_v6(url, options={})
 
   "http://beta.url2png.com/v6/#{url2png_apikey}/#{token}/png/?#{query_string}"
 end
+

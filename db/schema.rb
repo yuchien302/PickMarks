@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006091621) do
+ActiveRecord::Schema.define(:version => 20121006175423) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "url"
     t.string   "domain_name"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "name"
-    t.integer  "count",       :default => 0
-    t.string   "snapshot"
+    t.integer  "count",                      :default => 0
+    t.text     "snapshot",    :limit => 255
   end
 
 end
