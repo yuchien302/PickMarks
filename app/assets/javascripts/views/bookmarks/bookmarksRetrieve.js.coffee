@@ -12,6 +12,9 @@ class PickMarks.Views.BookmarksRetrieve extends Backbone.View
 
   render: ->
     total = @model.retrieveList
+    total.sortBy (bookmark) ->
+      bookmark.get('count')
+
     queries = @model.get('query').trim().split(' ')
     
 
@@ -24,6 +27,11 @@ class PickMarks.Views.BookmarksRetrieve extends Backbone.View
     $(@el).html(@template(bookmarks: result, query: queries))
     @appendBookmark(bookmark) for bookmark in result
     # total.each(@appendBookmark)
+
+
+
+
+
     this
 
   appendBookmark: (bookmark) ->

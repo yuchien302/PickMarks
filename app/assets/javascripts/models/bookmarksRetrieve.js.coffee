@@ -5,3 +5,4 @@ class PickMarks.Models.BookmarksRetrieve extends Backbone.Model
   initialize: ->
     @retrieveList = new PickMarks.Collections.Bookmarks()
     @retrieveList.fetch()
+
