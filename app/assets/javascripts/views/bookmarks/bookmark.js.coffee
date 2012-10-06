@@ -17,12 +17,10 @@ class PickMarks.Views.Bookmark extends Backbone.View
   addCount: (e) ->
     count =  @model.get('count')
 
-    @model.set({count: count+1}, {silent: true})
+    @model.set({count: count+1})
     @model.save()
 
-    @$('span').text( parseInt(@$('span').text()) + 1 )
-
-    e.delay(1000)
+    e.delay(500)
     
     
 
