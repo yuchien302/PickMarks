@@ -7,13 +7,13 @@
 #       
 jQuery ->
 
-  clickevent = (e) ->
-    e.preventDefault()
-    alert "123"
+  # clickevent = (e) ->
+  #   e.preventDefault()
+  #   alert "123"
 
-  $("h1").live('click', clickevent)
-    
-
+  # $("h1").live('click', clickevent)
+  # $(".trigger[title]").tooltip();
+  # $("#demo img[title]").tooltip();
   # apiKey = "AL7RP8h1izzN"
 
   # # Notice the use of the each method to gain access to each element individually

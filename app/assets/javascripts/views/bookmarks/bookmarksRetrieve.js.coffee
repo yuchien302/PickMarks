@@ -2,11 +2,10 @@ class PickMarks.Views.BookmarksRetrieve extends Backbone.View
 
   template: JST['bookmarks/retrieve']
 
-  # events:
-  #   'click a': 'addCount'
 
   initialize: ->
     @model.retrieveList.on('reset', @render, this)
+    # @model.retrieveList.on('reset', @preload, this)
     @model.on('change', @render, this)
 
 
@@ -26,23 +25,22 @@ class PickMarks.Views.BookmarksRetrieve extends Backbone.View
 
     $(@el).html(@template(bookmarks: result, query: queries))
     @appendBookmark(bookmark) for bookmark in result
-    # total.each(@appendBookmark)
-
-
-
-
 
     this
+
+  # preload: ->
+  #   img = []
+  #   n = 0
+  #   @model.retrieveList.each (bookmark) ->
+  #     img[n] = new Image()
+  #     img[n].src = bookmark.get('snapshot')
+  #     n = n + 1
 
   appendBookmark: (bookmark) ->
     view = new PickMarks.Views.Bookmark(model: bookmark)
     $('#retrieve_list').append(view.render().el)
 
-  addCount: (e) ->
-    alert @$('a').data('bookmark_id')
-    @$('a').addClass('abc')
-    
-    e.preventDefault()
+
     
     
 

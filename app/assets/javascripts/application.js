@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.tools.min
 //= require underscore
 //= require backbone
 //= require .//pick_marks
-//= require .//jquery.qtip-1.0.0-rc3.min
 //= require_tree ../templates/
 //= require_tree .//models
 //= require_tree .//collections

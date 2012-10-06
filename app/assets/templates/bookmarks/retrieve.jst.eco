@@ -3,7 +3,7 @@
 <% else: %>
 <p>no query~</p>
 <% end %>
-
+<p id="bookmark_preview"></p>
 
 <ul id="retrieve_list"></ul>
 

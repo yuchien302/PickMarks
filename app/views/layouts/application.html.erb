@@ -4,6 +4,7 @@
   <title>PickMarks</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
   <%= csrf_meta_tags %>
 
   
@@ -11,7 +12,13 @@
 
 </head>
 <body>
-<h1>testing</h1>
+<a href="#zxcv">abc</a>
+<p id="log"></p>
+<h1 class="trigger" title="123">testing</h1>
+<a href="http://www.cssglobe.com" class="screenshot" rel="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-snc6/183546_198421676842699_1626263_n.jpg" title="Web Standards Magazine">Css Globe</a>
 <%= yield %>
+
+<h1 id="zxcv">123</h1>
+
 </body>
 </html>

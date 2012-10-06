@@ -1,2 +1,2 @@
-<img src="http://www.google.com/s2/favicons?domain=<%= @bookmark.get('domain_name') %>">   <a href= <%= @bookmark.get('url') %> data-bookmark_id= <%= @bookmark.get('id') %> ><%= @bookmark.get('name') %> <%= @bookmark.get('count') %></a>
+<img src="http://www.google.com/s2/favicons?domain=<%= @bookmark.get('domain_name') %>">   <a href= <%= @bookmark.get('url') %> class="screenshot" rel=<%= @bookmark.get('snapshot') %> ><%= @bookmark.get('name') %> <%= @bookmark.get('count') %></a>
 

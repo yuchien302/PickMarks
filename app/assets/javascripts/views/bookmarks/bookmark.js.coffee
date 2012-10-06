@@ -5,6 +5,8 @@ class PickMarks.Views.Bookmark extends Backbone.View
 
   events:
     'click a': 'addCount'
+    # 'mouseenter a': 'showSnapshot'
+    # 'mouseleave a': 'hideSnapshot'
 
   initialize: ->
     @model.on('change', @render, this)
@@ -22,11 +24,11 @@ class PickMarks.Views.Bookmark extends Backbone.View
 
     e.delay(500)
     
-    
+  showSnapshot: (e) ->
+    snapshot =  @model.get('snapshot')
+    $(@el).append("<p id=\"ppreview\"><img class=\"bookmark_preview\" src=\"" + snapshot + "\"></p>")
+    @render
 
-
-
-
-# <% for bookmark in @bookmarks: %>
-#   <li><img src="http://www.google.com/s2/favicons?domain=<%= bookmark.get('domain_name') %>">   <a href= <%= bookmark.get('url') %> data-bookmark_id= <%= bookmark.get('id') %> ><%= bookmark.get('name') %> <%= bookmark.get('count') %></a></li>
-# <% end %>
+  hideSnapshot: (e) ->
+    $('p#ppreview').remove()
+    # @render
