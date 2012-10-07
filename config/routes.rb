@@ -1,7 +1,7 @@
 PickMarks::Application.routes.draw do
   
 
-  root to: "main#index"
+  root to: "main#search"
 
   scope "api" do
     resources :bookmarks

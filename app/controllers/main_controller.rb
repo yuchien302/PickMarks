@@ -1,4 +1,4 @@
 class MainController < ApplicationController
-  def index
+  def search
   end
 end
