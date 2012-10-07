@@ -12,5 +12,5 @@ class PickMarks.Views.BookmarkSearch.Name extends Backbone.View
   updateQuery: (e) ->
     e.preventDefault()
     query = $('#input_query').val()
-    queries = query.trim().split(' ')
+    queries = query.trim().replace(/\s+/g,' ').split(' ')
     @trigger("updateQuery", queries)
