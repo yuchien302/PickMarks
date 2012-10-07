@@ -5,10 +5,24 @@
 @import "bootstrap";
 
 body {
+  background: url(image_path('wood.jpeg'));
   width: 80%;
   margin: 50px auto 100px auto;
-  border: 1px solid #777;
   font-size: 16px;
+}
+
+#container {
+  background-color: #fff;
+  
+  -webkit-box-shadow: rgba(34, 25, 25, 0.5) 0 0 5px;
+  -moz-box-shadow: rgba(34, 25, 25, 0.5) 0 0 5px;
+  box-shadow: rgba(34, 25, 25, 0.5) 0 0 5px;
+  
+  -webkit-border-radius: 8px 8px 8px 8px;
+  -moz-border-radius: 8px 8px 8px 8px;
+  border-radius: 8px 8px 8px 8px;
+
+  padding: 20px 20px 20px 20px;
 }
 
 ul#retrieve_list{
