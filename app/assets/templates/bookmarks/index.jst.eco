@@ -1,7 +1,0 @@
-<h1>PickMarks</h1>
-
-<form id="search_bookmark">
-  <input type="search" name="query" id="search_bookmark_query">
-  <input type="submit" value="search">
-</form>
-
