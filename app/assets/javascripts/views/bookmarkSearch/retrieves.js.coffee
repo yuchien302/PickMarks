@@ -8,12 +8,12 @@ class PickMarks.Views.BookmarkSearch.Retrieves extends Backbone.View
     # @model.retrieveList.on('reset', @preload, this)
     @collection.on('reset', @render, this)
 
-  retrieve: (query) ->
+  retrieve: (queries) ->
     total = @collection
     # total.sortBy (bookmark) ->
     #   bookmark.get('count')
 
-    queries = query.trim().split(' ')
+    
     
 
     result = total.filter (bookmark) ->

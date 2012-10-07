@@ -1,6 +1,6 @@
 class PickMarks.Models.BookmarkSearch extends Backbone.Model
   
-  defaults: { 'query':'' }
+  defaults: { 'queries':'' }
 
   initialize: (options) ->
     @bookmarks = options.collection

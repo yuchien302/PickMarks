@@ -20,6 +20,7 @@ class PickMarks.Views.BookmarkSearch extends Backbone.View
     this.$("#bookmarksearch_retrieves").html(@retrievesView.render().el)
     this
 
-  updateQuery: (query) =>
-    @model.set('query': query)
-    @retrievesView.retrieve( @model.get('query') )
+  updateQuery: (queries) =>
+    @model.set('queries': queries)
+    this.$("#query_inspect").text(queries)
+    @retrievesView.retrieve( @model.get('queries') )

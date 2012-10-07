@@ -1,9 +1,7 @@
 <form id="bookmarksearch_name"></form>
 
-<% if @query != "" : %>
-<p><%= @query %></p>
-<% else: %>
-<p>no query~</p>
-<% end %>
+
+<p id="query_inspect">no query~</p>
+
 
 <div id="bookmarksearch_retrieves"></div>
