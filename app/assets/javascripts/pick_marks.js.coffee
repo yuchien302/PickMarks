@@ -5,7 +5,7 @@ window.PickMarks =
   Routers: {}
   init: -> 
     new PickMarks.Routers.Bookmarks
-    Backbone.history.start()
+    Backbone.history.start({pushState: true})
 
 $(document).ready ->
   PickMarks.init()

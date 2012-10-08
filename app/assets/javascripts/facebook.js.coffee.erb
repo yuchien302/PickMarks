@@ -1,35 +1,35 @@
 jQuery ->
   window.location.hash = ""  if window.location.hash is "#_=_"
-  $('body').prepend('<div id="fb-root"></div>')
-  $.ajax
-    url: "#{window.location.protocol}//connect.facebook.net/zh_TW/all.js"
-    dataType: 'script'
-    cache: true
-    # success: (result) ->
-    #   alert "Finish Loading FB"
-    error: (result) ->
-      alert "Error"
+#   $('body').prepend('<div id="fb-root"></div>')
+#   $.ajax
+#     url: "#{window.location.protocol}//connect.facebook.net/zh_TW/all.js"
+#     dataType: 'script'
+#     cache: true
+#     success: (result) ->
+#       alert "Finish Loading FB"
+#     error: (result) ->
+#       alert "Error"
 
 
-window.fbAsyncInit = ->
-<% if Rails.env == 'development' || Rails.env == 'test' %>
-  FB.init(appId: '538500719499004', cookie: true)
-<% else %>
-  FB.init(appId: '538500719499004', cookie: true)
-<% end %>
+# window.fbAsyncInit = ->
+# <% if Rails.env == 'development' || Rails.env == 'test' %>
+#   FB.init(appId: '538500719499004', cookie: true)
+# <% else %>
+#   FB.init(appId: '538500719499004', cookie: true)
+# <% end %>
 
-  $('#sign_in').click (e) ->
-    e.preventDefault()
-    FB.login (response) ->
-      window.location = '/auth/facebook/callback' if response.authResponse
-    , scope: "email,publish_stream,user_photos"
+#   $('#sign_in').click (e) ->
+#     e.preventDefault()
+#     FB.login (response) ->
+#       window.location = '/auth/facebook/callback' if response.authResponse
+#     , scope: "email,publish_stream,user_photos,offline_access"
 
 
-  $('#sign_out').click (e) ->
-    FB.getLoginStatus (response) ->
-      FB.logout() if response.authResponse
-    true
+#   $('#sign_out').click (e) ->
+#     FB.getLoginStatus (response) ->
+#       FB.logout() if response.authResponse
+#     true
 
-  # alert "Finish fbAsyncInit"
+#   alert "Finish fbAsyncInit"
 
 

@@ -1,13 +1,18 @@
 class PickMarks.Routers.Bookmarks extends Backbone.Router
   routes:
-    '': 'search'
+    '': 'root'
+    'users/:id': 'search'
     'bookmarks/:id': 'show'
 
   initialize: ->
     @bookmarks = new PickMarks.Collections.Bookmarks()
     @bookmarks.fetch()
 
-  search: ->
+  root: ->
+    alert "root"
+
+  search: (id) ->
+    alert "User #{id}"
     @bookmarkSearch = new PickMarks.Models.BookmarkSearch({collection: @bookmarks})
     @bookmarkSearchView = new PickMarks.Views.BookmarkSearch({model: @bookmarkSearch})
 
