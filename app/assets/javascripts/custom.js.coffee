@@ -7,6 +7,8 @@
 #       
 jQuery ->
 
+  # $('#mies1').click ->
+
   # clickevent = (e) ->
   #   e.preventDefault()
   #   alert "123"

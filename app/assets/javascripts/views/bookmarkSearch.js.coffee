@@ -9,7 +9,7 @@ class PickMarks.Views.BookmarkSearch extends Backbone.View
   initialize: ->
     @nameView = new PickMarks.Views.BookmarkSearch.Name()
     @nameView.on("updateQuery", @updateQuery)
-
+    
     @retrievesView = new PickMarks.Views.BookmarkSearch.Retrieves({collection: @model.bookmarks})
 
 

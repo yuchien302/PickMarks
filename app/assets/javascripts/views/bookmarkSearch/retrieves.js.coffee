@@ -1,7 +1,8 @@
 class PickMarks.Views.BookmarkSearch.Retrieves extends Backbone.View
 
   template: JST['bookmarkSearch/retrieves']
-
+  tagName: 'table'
+  className: 'table table-hover'  
 
   initialize: ->
     # @model.retrieveList.on('reset', @render, this)
@@ -12,9 +13,6 @@ class PickMarks.Views.BookmarkSearch.Retrieves extends Backbone.View
     total = @collection
     # total.sortBy (bookmark) ->
     #   bookmark.get('count')
-
-    
-    
 
     result = total.filter (bookmark) ->
       find = true

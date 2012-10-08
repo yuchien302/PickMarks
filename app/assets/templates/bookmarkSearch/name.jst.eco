@@ -1,2 +1,2 @@
 <input type="search" name="query" id="input_query">
-<input type="submit" value="search">
+<input type="submit" class="btn btn-primary" value="search">

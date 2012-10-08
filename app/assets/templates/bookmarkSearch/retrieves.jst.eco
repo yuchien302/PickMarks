@@ -1,2 +1,9 @@
-<ul id="bookmarksearch_retrieves_bookmarks"></ul>
+<thead>
+  <td>favicon</td>
+  <td>name</td>
+  <td>count</td>
+  <td>edit</td>
+  <td>remove</td>
+</thead>
+<tbody id="bookmarksearch_retrieves_bookmarks" ></tbody>
 
