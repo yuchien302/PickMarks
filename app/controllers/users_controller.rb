@@ -1,25 +1,74 @@
 class UsersController < ApplicationController
+  before_filter :authenticate,
+                :only => [:index, :edit, :update, :show, :index]
+  before_filter :correct_user, :only => [:edit, :update, :show]
+  before_filter :admin_user,   :only => [:destroy, :index]
   # GET /users
   # GET /users.json
   def index
     @users = User.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+  end
 
-    respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @user }
+
+  def search
+    # @user = User.find(params[:id])
+  end
+
+
+  def new
+    @user  = User.new
+    # @title = "Sign up"
+  end
+  
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      sign_in @user
+      redirect_to @user, :flash => { :success => "Welcome to the Sample App!" }
+    else
+      # @title = "Sign up"
+      render 'new'
+    end
+  end
+  
+  def edit
+    # @title = "Edit user"
+  end
+  
+  def update
+    if @user.update_attributes(params[:user])
+      sign_in @user
+      redirect_to @user, :flash => { :success => "Profile updated." }
+    else
+      # @title = "Edit user"
+      render 'edit'
     end
   end
 
+  def destroy
+    @user.destroy
+    redirect_to users_path, :flash => { :success => "User destroyed." }
+  end
+
+
+
+  private
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(current_user) unless current_user?(@user)
+    end
+
+    def admin_user
+      # @user = User.find(params[:id])
+      redirect_to(root_path) if !current_user.admin?# || current_user?(@user)
+    end
 
 end

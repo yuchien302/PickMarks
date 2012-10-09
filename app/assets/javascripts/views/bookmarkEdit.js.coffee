@@ -30,7 +30,7 @@ class PickMarks.Views.BookmarkEdit extends Backbone.View
         this.$('#edit_form').modal('hide')
         this.$('#edit_form').remove()
       error: ->
-        alert "456"
+        alert "error in: PickMarks.Views.BookmarkEdit"
 
 
   hide: (e) =>

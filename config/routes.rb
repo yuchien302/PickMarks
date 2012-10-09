@@ -1,18 +1,26 @@
 PickMarks::Application.routes.draw do
   
 
-  root to: "main#search"
+  root to: "main#welcome"
 
-  scope "api" do
-    resources :bookmarks
-  end
+  
   
   resources :users
 
-  match '/auth/:provider/callback', to: 'sessions#create'
-  match '/auth/failure', to: redirect('/')
-  match '/signout', to: 'sessions#destroy', as: 'signout'
+  scope "api" do
+    resources :users do
+      resources :bookmarks
+    end
+  end
 
+  resources :sessions,      :only => [:new, :create]
+
+  match '/users/:id/search', to: 'users#search', as: 'search'
+
+  match '/auth/:provider/callback', to: 'sessions#create_from_oauth'
+  match '/auth/failure', to: redirect('/')
+  match '/signout', to: 'sessions#destroy'#, as: 'signout'
+  match '/signin',  :to => 'sessions#new'
 
 
   # The priority is based upon order of creation:

@@ -1,12 +1,31 @@
 class SessionsController < ApplicationController
+
+  def new
+    # @title = "Sign in"
+  end
+  
   def create
+    user = User.authenticate(params[:session][:email],
+                             params[:session][:password])
+    if user.nil?
+      flash.now[:error] = "Invalid email/password combination."
+      @title = "Sign in"
+      render 'new'
+    else
+      sign_in user
+      redirect_back_or search_path(user)
+    end
+  end
+
+
+  def create_from_oauth
     user = User.from_omniauth(env["omniauth.auth"])
-    session[:user_id] = user.id
-    redirect_to user
+    sign_in user
+    redirect_back_or search_path(user)
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url
+    sign_out
+    redirect_to root_path
   end
 end

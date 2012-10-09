@@ -1,8 +1,13 @@
 class BookmarksController < ApplicationController
   respond_to :json
 
+
+
+
   def index
-    respond_with Bookmark.all
+    # debugger
+    respond_with Bookmark.where(user_id: params[:user_id])
+    # respond_with Bookmark.all
   end
 
   def show
@@ -14,6 +19,7 @@ class BookmarksController < ApplicationController
   end
 
   def update
+    debugger
     respond_with Bookmark.update(params[:id], params[:bookmark])
   end
 

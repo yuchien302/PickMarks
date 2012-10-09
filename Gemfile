@@ -10,6 +10,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'backbone-on-rails'
 gem 'omniauth-facebook', '1.4.0'
 gem 'koala'
+gem 'debugger', group: [:development, :test]
 # gem 'url2png'
 # gem 'jqtools-rails'
 

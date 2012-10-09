@@ -4,7 +4,7 @@
 
       <%= link_to "PirckMarks", root_path, class: "brand", id: "logo" %>
 
-        <% if current_user %>
+        <% if signed_in? %>
 
           <ul class="nav">
             <li><%= link_to "使用者頁面", user_path(current_user) %></li>
@@ -17,7 +17,7 @@
                  <%= current_user.name %> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><a href='#'>設定</a></li>
+                <li><%= link_to "設定", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li><%= link_to "登出", signout_path, id: "sign_out" %></li>
               </ul>
