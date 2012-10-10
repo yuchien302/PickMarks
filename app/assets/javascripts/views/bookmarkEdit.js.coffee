@@ -8,7 +8,6 @@ class PickMarks.Views.BookmarkEdit extends Backbone.View
   events:
     'click .save':   'save'
     'click .cancel': 'hide'
-    'hidden':        'hide'
     'keydown':       'keydown'
 
 
@@ -17,7 +16,7 @@ class PickMarks.Views.BookmarkEdit extends Backbone.View
 
   render:  ->
     $(@el).html(@template(@model.toJSON()))
-    @delegateEvents()
+    # @delegateEvents()
     this.$('#edit_form').modal('show')
     this
 

@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       render 'new'
     else
       sign_in user
-      redirect_back_or search_path(user)
+      redirect_back_or root_path
     end
   end
 
@@ -21,11 +21,11 @@ class SessionsController < ApplicationController
   def create_from_oauth
     user = User.from_omniauth(env["omniauth.auth"])
     sign_in user
-    redirect_back_or search_path(user)
+    redirect_back_or root_path
   end
 
   def destroy
     sign_out
-    redirect_to root_path
+    redirect_to welcome_path
   end
 end

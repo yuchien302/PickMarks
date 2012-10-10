@@ -1,5 +1,11 @@
 jQuery ->
+  # if (window.location.hash == '#_=_')
+    # window.location.hash = ''
+    # history.pushState('', document.title, window.location.pathname)
+    # e.preventDefault()
+
   window.location.hash = ""  if window.location.hash is "#_=_"
+
 #   $('body').prepend('<div id="fb-root"></div>')
 #   $.ajax
 #     url: "#{window.location.protocol}//connect.facebook.net/zh_TW/all.js"

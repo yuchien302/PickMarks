@@ -4,7 +4,7 @@
 <!-- class="screenshot" -->
 
 <td>
-<a href= <%= @url  %> class="url" rel=<%= @snapshot %> >
+<a href= "<%= @url  %>" class="url screenshot" rel=<%= @snapshot %> >
   <%= @name %> 
 </a>
 </td>

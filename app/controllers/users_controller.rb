@@ -13,13 +13,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
-
-  def search
-    # @user = User.find(params[:id])
-  end
 
 
   def new
@@ -54,7 +50,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_path, :flash => { :success => "User destroyed." }
+    redirect_to welcome_path, :flash => { :success => "User destroyed." }
   end
 
 
@@ -63,12 +59,12 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(current_user) unless current_user?(@user)
+      redirect_to(welcome_path) unless current_user?(@user)
     end
 
     def admin_user
-      # @user = User.find(params[:id])
-      redirect_to(root_path) if !current_user.admin?# || current_user?(@user)
+      @user = User.find(params[:id])
+      redirect_to(welcome_path) if !current_user.admin?# || current_user?(@user)
     end
 
 end

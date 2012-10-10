@@ -8,6 +8,7 @@ class PickMarks.Views.BookmarkSearch.Retrieves extends Backbone.View
     # @model.retrieveList.on('reset', @render, this)
     # @model.retrieveList.on('reset', @preload, this)
     @collection.on('reset', @render, this)
+    @collection.on('add', @prependBookmark, this)
 
   retrieve: (queries) ->
     total = @collection
@@ -21,12 +22,12 @@ class PickMarks.Views.BookmarkSearch.Retrieves extends Backbone.View
 
 
     $(@el).html(@template())
-    @appendBookmark(bookmark) for bookmark in result
+    @prependBookmark(bookmark) for bookmark in result
 
   render: ->
 
     $(@el).html(@template())
-    @collection.each @appendBookmark
+    @collection.each @prependBookmark
 
     this
 
@@ -38,9 +39,9 @@ class PickMarks.Views.BookmarkSearch.Retrieves extends Backbone.View
   #     img[n].src = bookmark.get('snapshot')
   #     n = n + 1
 
-  appendBookmark: (bookmark) ->
+  prependBookmark: (bookmark) ->
     view = new PickMarks.Views.BookmarkSearch.Retrieves.Bookmark(model: bookmark)
-    $('#bookmarksearch_retrieves_bookmarks').append(view.render().el)
+    $('#bookmarksearch_retrieves_bookmarks').prepend(view.render().el)
 
 
     

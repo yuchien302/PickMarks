@@ -1,9 +1,11 @@
 class MainController < ApplicationController
+  before_filter :authenticate, :only => [:app]
 
-  def search
-  end
 
-  def signin
+  def welcome
   end
   
+  def app
+  end
+
 end

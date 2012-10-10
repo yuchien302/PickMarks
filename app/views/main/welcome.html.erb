@@ -1,1 +1,33 @@
-<div id="container">Welcome</div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10 offset1">
+
+      <div id="container">
+          <h1>Welcome</h1>
+        <% unless signed_in? %>
+          <h2>Sign in</h2>
+
+          <%= form_for(:session, :url => sessions_path) do |f| %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.text_field :email %>
+            </div>
+
+
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password %>
+            </div>
+
+            <div>
+              <%= f.submit "Sign in" %>
+            </div>
+          <% end %>
+        
+        <% end %>
+      </div>
+
+
+    </div>
+  </div>
+</div>

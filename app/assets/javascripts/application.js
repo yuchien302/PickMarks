@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
+//= require .//facebook
 //= require .//pick_marks
 //= require_tree ../templates/
 //= require_tree .//models

@@ -1,21 +1,21 @@
 PickMarks::Application.routes.draw do
   
 
-  root to: "main#welcome"
+  root to: "main#app"
 
   
-  
+
   resources :users
 
   scope "api" do
-    resources :users do
-      resources :bookmarks
-    end
+    resources :bookmarks
   end
 
   resources :sessions,      :only => [:new, :create]
 
-  match '/users/:id/search', to: 'users#search', as: 'search'
+
+  match '/welcome', to: 'main#welcome'
+
 
   match '/auth/:provider/callback', to: 'sessions#create_from_oauth'
   match '/auth/failure', to: redirect('/')

@@ -1,21 +1,17 @@
 class PickMarks.Routers.Bookmarks extends Backbone.Router
   routes:
     '': 'root'
-    'users/:user_id/search': 'search'
-    'bookmarks/:id': 'show'
+
+
 
   # initialize: ->
 
 
-  root: ->
-    alert "root"
-
-  search: (user_id) ->
-    alert "User #{user_id}"
-    @bookmarks = new PickMarks.Collections.Bookmarks(user_id)
+  root:  ->
+    @bookmarks = new PickMarks.Collections.Bookmarks()
 
     @bookmarks.fetch()
-    @bookmarkSearch = new PickMarks.Models.BookmarkSearch({collection: @bookmarks})
+    @bookmarkSearch = new PickMarks.Models.BookmarkSearch({bookmarks: @bookmarks})
     @bookmarkSearchView = new PickMarks.Views.BookmarkSearch({model: @bookmarkSearch})
 
     # @retrieveView = new PickMarks.Views.BookmarksRetrieve({model: @model})
@@ -23,5 +19,8 @@ class PickMarks.Routers.Bookmarks extends Backbone.Router
     $('#container').html(@bookmarkSearchView.render().el)
     # $('#container').append(@retrieveView.render().el)
 
-  show: (id) ->
-    alert "Entry #{id}"
+  # new: (user_id) ->
+  #   alert "New: User #{user_id}"
+  #   @bookmarkNewView = new PickMarks.Views.BookmarkNew()
+  #   $('#container').html(@bookmarkNewView.render().el)
+

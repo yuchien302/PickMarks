@@ -11,7 +11,40 @@ body {
   //font-size: 16px;
 }
 
+#panel {
 
+  padding: 5px;
+  text-align: center;
+  line-hight: 4em;
+  font-size: 4em;
+  font-weight: bold;
+  position: fixed;
+  border: 1px solid #888;
+  opacity: 0.6;
+  top: 80px;
+  right: 2%;
+  width: 6.3%;
+  height: 40px;
+
+  background-color: #fff;
+  
+  -webkit-box-shadow: rgba(34, 25, 25, 0.5) 0 0 5px;
+  -moz-box-shadow: rgba(34, 25, 25, 0.5) 0 0 5px;
+  box-shadow: rgba(34, 25, 25, 0.5) 0 0 5px;
+  
+  -webkit-border-radius: 8px 8px 8px 8px;
+  -moz-border-radius: 8px 8px 8px 8px;
+  border-radius: 8px 8px 8px 8px;
+
+}
+
+#panel:hover {
+  opacity: 0.9;
+}
+
+#panel:active {
+  background-color: #ddd;
+}
 
 #container {
   background-color: #fff;
